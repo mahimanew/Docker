@@ -1,0 +1,50 @@
+
+# Ephemeral storage and its drawbacks
+
+### There are two types of volume
+
+- Ephemeral
+- Permenant
+
+#### Ephemeral
+
+```
+docker run -d --name boxone lovelearnlinux/webserver:v1
+docker ps
+docker exec -it boxone /bin/bash
+
+mkdir mydata
+cd mydata
+touch myfile
+exit
+
+
+
+cd /var/lib/docker/overlay2
+ls
+ls -lrt
+cd ab44e44e39f4fdf7f5b6f39177f0afe598d375bdc96c40730b27ea5ae8b99cf0
+ls
+cd diff
+ls
+cd mydata
+ls
+```
+
+- you can see the file which you have created inside the container
+
+- let us stop and delete the container, then check the file
+
+```
+ cd
+docker ps -a
+docker stop boxone
+docker rm boxone
+cd /var/lib/docker/overlay2
+ls -lrt
+```
+- since container has been deleted we can't get the diff file, and files also lost
+
+
+
+
