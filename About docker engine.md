@@ -19,8 +19,7 @@
  - The Docker daemon is a background process that manages Docker objects such as images, containers, networks, and volumes. It is responsible for building, running, and distributing Docker containers.
 
  ### What is containerd?
-  - It is a container superviser, It listen user inputs, pull the necessary images and manages networking and storage.
-
+  - It is a container superviser, It listen user inputs, pull the necessary images.
 ### What is Shim?
 
 - Creates the containers, and act as a bridge between the runc
