@@ -1,0 +1,10 @@
+# Docker Networking
+
+### What is docker 0?
+
+```
+docker ps -a
+ip a s
+```
+
+- output:
